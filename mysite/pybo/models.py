@@ -7,11 +7,17 @@ class Question(models.Model):
     content = models.TextField()
     create_date = models.DateTimeField()
 
+    def __str__(self):
+        return self.subject
+
 
 class Answer(models.Model):
     question=models.ForeignKey(Question, on_delete=models.CASCADE)
     content=models.TextField()
     create_date=models.DateField()
+
+    def __str__(self):
+        return self.content
 
 
 # Create your models here.
